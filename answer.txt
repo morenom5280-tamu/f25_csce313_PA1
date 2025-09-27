@@ -1,0 +1,7 @@
+When transferring a large 100MB file, the measured transfer time reflects the 
+limits of the underlying system resources. The primary bottleneck in this experiment 
+is not the CPU, but rather I/O throughput. If the client and server are running on 
+the same machine, the limiting factor is the disk’s read and write speeds, since 
+the system must read the file from storage and write it again in the received directory. 
+In other words, the program spends most of its time waiting for data to be read from disk, 
+sent across the network, and written back to disk, instead of performing computations.
